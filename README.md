@@ -35,5 +35,7 @@ A ServiceNow application to manage library book requests.
 ### 6. Test Record with LBR Number
 
 ### 7. Email Log
+https://github.com/Shobarani1268/Library_Book_Request-Servicenow/blob/main/Screenshot%202026-06-28%20193606.png?raw=true
+
 
 ### 8. Error Message (Past Date)
