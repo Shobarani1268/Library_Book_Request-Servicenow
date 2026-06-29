@@ -19,3 +19,21 @@ A ServiceNow application to manage library book requests.
 2. In ServiceNow go to System Update Sets
 3. Import XML file
 4. Preview and Commit
+
+## 📸 Project Screenshots
+
+### 1. Table Created
+
+### 2. Fields Added
+
+### 3. Form Layout
+
+### 4. Business Rule
+
+### 5. Notification Setup
+
+### 6. Test Record with LBR Number
+
+### 7. Email Log
+
+### 8. Error Message (Past Date)
