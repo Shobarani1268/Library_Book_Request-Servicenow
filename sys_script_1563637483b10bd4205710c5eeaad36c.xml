@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-29 11:25:43">
+<sys_script action="INSERT_OR_UPDATE">
+<abort_action>false</abort_action>
+<access>package_private</access>
+<action_delete>false</action_delete>
+<action_insert>true</action_insert>
+<action_query>false</action_query>
+<action_update>true</action_update>
+<active>true</active>
+<add_message>false</add_message>
+<advanced>true</advanced>
+<change_fields>false</change_fields>
+<client_callable>false</client_callable>
+<collection>u_library_book_requests</collection>
+<condition/>
+<description/>
+<execute_function>false</execute_function>
+<filter_condition table="u_library_book_requests"/>
+<is_rest>false</is_rest>
+<message/>
+<name>Validate Issue Date</name>
+<order>100</order>
+<priority>100</priority>
+<rest_method display_value=""/>
+<rest_method_text/>
+<rest_service display_value=""/>
+<rest_service_text/>
+<rest_variables/>
+<role_conditions/>
+<script><![CDATA[(function executeRule(current, previous /*null when insert*/) {
+
+    // Get today's date
+    var today = new GlideDate();
+    today.setValue(gs.nowDate());
+    
+    // Get the Issue Date entered by student
+    var issueDate = current.u_issue_date.getDateLocalTime();
+    
+    // Check if issue date is in the past
+    if (current.u_issue_date < today) {
+        
+        // Show error message and stop saving
+        gs.addErrorMessage('Issue Date cannot be in the past. Please select today or a future date.');
+        current.setAbortAction(true);
+    }
+
+})(current, previous);]]></script>
+<sys_class_name>sys_script</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-28 13:37:15</sys_created_on>
+<sys_domain>global</sys_domain>
+<sys_domain_path>/</sys_domain_path>
+<sys_id>1563637483b10bd4205710c5eeaad36c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_name>Validate Issue Date</sys_name>
+<sys_overrides display_value=""/>
+<sys_package display_value="Global" source="global">global</sys_package>
+<sys_policy/>
+<sys_scope display_value="Global">global</sys_scope>
+<sys_update_name>sys_script_1563637483b10bd4205710c5eeaad36c</sys_update_name>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-28 13:37:15</sys_updated_on>
+<template/>
+<when>before</when>
+</sys_script>
+</unload>
